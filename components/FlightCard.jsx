@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SvgAirPlane } from './SvgAirPlane';
 import { SvgArrow } from './SvgArrow';
 import { SvgHeart } from './SvgHeart';
 import { useDispatch } from 'react-redux';
-import { LIKE } from '../redux/actionTypes'
+import { likeFlight } from '../redux/actions';
 
 export const FlightCard = ({ item }) => {
   
@@ -31,7 +31,7 @@ export const FlightCard = ({ item }) => {
       <TouchableOpacity style={styles.heartContainer}>
         <SvgHeart 
           isLiked={item.isLiked}
-          onPress={()=> dispatch({type: LIKE, payload: item})}
+          onPress={()=> dispatch(likeFlight(item))}
           />         
       </TouchableOpacity>
     </View>

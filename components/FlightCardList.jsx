@@ -4,7 +4,7 @@ import { FlightCard } from './FlightCard';
 import { useSelector } from 'react-redux';
 
 export const FlightCardList = () => {
-  const store = useSelector(state => state);
+  const store = useSelector(state => state.flights);
   return (
     <FlatList
         data={store}

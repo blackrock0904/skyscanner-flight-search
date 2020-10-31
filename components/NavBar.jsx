@@ -1,8 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { NavBarLine } from './NavBarLine';
+import { useSelector } from 'react-redux';
 
 export const NavBar = () => {
+
+  const isBrowse = useSelector( state => state.isBrowse);
   return (
     <View style={styles.container}>
       <View>
@@ -13,21 +16,16 @@ export const NavBar = () => {
           <TouchableOpacity >
             <Text style={styles.linkText}>Favoirites</Text>
           </TouchableOpacity>
-          <LinearGradient 
-            colors={['#3C4CAD', '#00C3FF']}
-            style={styles.active}
-            start={[0, 0]}
-            end={[1, 1]}
-          />
+          {!isBrowse && <NavBarLine />}
         </View>
         <View style={styles.link}>
           <TouchableOpacity>
             <Text style={styles.linkText}>Browse</Text>    
           </TouchableOpacity>
+          {isBrowse && <NavBarLine />}
         </View>
       </View>
     </View>
-
   );
 }
 
@@ -64,14 +62,6 @@ const styles = StyleSheet.create({
   },
   linkText: {
     textAlign: 'center',
-  },
-  active: {
-    width: '100%',
-    height: 3,
-    borderRadius: 2,
-    position: 'absolute',
-    bottom: -10,
-    shadowOpacity: 0.15
   }
 });
 
