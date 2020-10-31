@@ -1,13 +1,15 @@
 import React from 'react';
 import {View, ScrollView, StyleSheet, FlatList } from 'react-native';
 import { FlightCard } from './FlightCard';
-import { db } from '../db/db';
+import { useSelector } from 'react-redux';
+// import { db } from '../db/db';
 
 export const FlightCardList = () => {
+  const store = useSelector(state => state);
   return (
     // <View style={styles.container}>
     <FlatList
-        data={db}
+        data={store}
         renderItem={(item) => {
           return <FlightCard {...item} />
         }}
