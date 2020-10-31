@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
 import { NavBar } from './components/NavBar';
@@ -12,7 +12,7 @@ export default function App() {
       <View>
         <NavBar />
         <FlightCardList />
-        <StatusBar style="auto" />
+        {/* <StatusBar style="auto" /> */}
       </View>
     </Provider>
   );

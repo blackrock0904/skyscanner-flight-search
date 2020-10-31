@@ -1,30 +1,31 @@
 import React from 'react';
-import { View, ScrollView, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SvgAirPlane } from './SvgAirPlane';
 import { SvgArrow } from './SvgArrow';
 import { SvgHeart } from './SvgHeart';
+import { SvgHeartEmpty } from './SvgHeartEmpty';
 
-export const FlightCard = (props) => {
+export const FlightCard = ({ item }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <SvgAirPlane />
         <View style={styles.content}>
           <View style={styles.contentTitle}>
-            <Text style={styles.bigtext}>Moscow</Text>
+            <Text style={styles.bigtext}>{item.from}</Text>
             <SvgArrow />
-            <Text style={styles.bigtext}>New York</Text>    
+            <Text style={styles.bigtext}>{item.to}</Text>    
           </View>
-          <Text style={styles.mediumText}>VKO  —  28 June, 2020  —  14:50</Text>         
-          <Text style={styles.mediumText}>Aeroflot</Text>    
+          <Text style={styles.mediumText}>{item.airport}  —  {item.date}  —  {item.time}</Text>         
+          <Text style={styles.mediumText}>{item.company}</Text>    
         </View> 
       </View>
       <View style={styles.footer}>
         <Text style={styles.smallText}>Price:</Text>
-        <Text style={styles.bigText}>23 934 ₽</Text>
+        <Text style={styles.bigText}>{item.price} ₽</Text>
       </View>
       <TouchableOpacity style={styles.heartContainer}>
-        <SvgHeart/>     
+        {item.isLiked ? <SvgHeart/> : <SvgHeartEmpty/>}             
       </TouchableOpacity>
     </View>
   );
