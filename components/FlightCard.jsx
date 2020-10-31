@@ -1,11 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { SvgAirPlane } from './SvgAirPlane';
 import { SvgArrow } from './SvgArrow';
 import { SvgHeart } from './SvgHeart';
-import { SvgHeartEmpty } from './SvgHeartEmpty';
+import { useDispatch } from 'react-redux';
+import { LIKE } from '../redux/actionTypes'
 
 export const FlightCard = ({ item }) => {
+  
+  const dispatch = useDispatch();
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -25,7 +29,10 @@ export const FlightCard = ({ item }) => {
         <Text style={styles.bigText}>{item.price} ₽</Text>
       </View>
       <TouchableOpacity style={styles.heartContainer}>
-        {item.isLiked ? <SvgHeart/> : <SvgHeartEmpty/>}             
+        <SvgHeart 
+          isLiked={item.isLiked}
+          onPress={()=> dispatch({type: LIKE, payload: item})}
+          />         
       </TouchableOpacity>
     </View>
   );
