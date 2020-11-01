@@ -1,17 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet, Button, ImageBackground, Dimensions } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { GradientLine } from './GradientLine';
 import { showInfo } from '../redux/actions';
+import { likeFlight } from '../redux/actions';
+import { GradientLine } from './GradientLine';
 import { Carousel } from './Carousel';
 import { SvgMore } from './SvgMore';
 import { SvgHeart } from './SvgHeart';
-import { likeFlight } from '../redux/actions';
 
 const { height, width } = Dimensions.get('window');
-
 export const FlightInfo = () => {
-
   const currentFlight = useSelector(state => state.currentFlight);
   const dispatch = useDispatch();
 

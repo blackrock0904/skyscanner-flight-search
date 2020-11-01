@@ -17,19 +17,17 @@ export const NavBar = () => {
         <View style={styles.link}>
           <Text
             style={styles.linkText}
-            onPress={() => dispatch(filterFlights())}
-          >
+            onPress={() => dispatch(filterFlights())}>
             Favoirites
-            </Text>
+          </Text>
           {filterByLike && <GradientLine myStyles={styles.gradientLine}/>}
         </View>
         <View style={styles.link}>
           <Text
             style={styles.linkText}
-            onPress={() => dispatch(filterFlights())}
-          >
+            onPress={() => dispatch(filterFlights())}>
             Browse
-            </Text>
+          </Text>
           {!filterByLike && <GradientLine myStyles={styles.gradientLine}/>}
         </View>
       </View>
@@ -68,7 +66,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginHorizontal: 20,
-
   },
   link: {
     flexBasis: '50%',
@@ -80,4 +77,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   }
 });
-

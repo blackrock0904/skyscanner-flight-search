@@ -1,40 +1,40 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { likeFlight, showInfo } from '../redux/actions';
 import { SvgAirPlane } from './SvgAirPlane';
 import { SvgArrow } from './SvgArrow';
 import { SvgHeart } from './SvgHeart';
-import { useDispatch } from 'react-redux';
-import { likeFlight, showInfo } from '../redux/actions';
 
-export const FlightCard = ({ item }) => {
-  
+export const FlightCard = ({ flight }) => {
   const dispatch = useDispatch();
-
+  const item = flight.item;
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <SvgAirPlane onPress={()=> dispatch(showInfo(item))}/>
-        <View style={styles.content}>
-          <View style={styles.contentTitle}>
-            <Text style={styles.bigtext}>{item.from}</Text>
-            <SvgArrow />
-            <Text style={styles.bigtext}>{item.to}</Text>    
+    <TouchableOpacity onPress={()=> dispatch(showInfo(item))}>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <SvgAirPlane />
+          <View style={styles.content}>
+            <View style={styles.contentTitle}>
+              <Text style={styles.bigtext}>{item.from}</Text>
+              <SvgArrow />
+              <Text style={styles.bigtext}>{item.to}</Text>
+            </View>
+            <Text style={styles.mediumText}>{item.airport}  —  {item.date}  —  {item.time}</Text>
+            <Text style={styles.mediumText}>{item.company}</Text>
           </View>
-          <Text style={styles.mediumText}>{item.airport}  —  {item.date}  —  {item.time}</Text>         
-          <Text style={styles.mediumText}>{item.company}</Text>    
-        </View> 
-      </View>
-      <View style={styles.footer}>
-        <Text style={styles.smallText}>Price:</Text>
-        <Text style={styles.bigText}>{item.price} ₽</Text>
-      </View>
-      <TouchableOpacity style={styles.heartContainer}>
-        <SvgHeart 
+        </View>
+        <View style={styles.footer}>
+          <Text style={styles.smallText}>Price:</Text>
+          <Text style={styles.bigText}>{item.price} ₽</Text>
+        </View>
+        <SvgHeart
+          style={styles.heartContainer}
           isLiked={item.isLiked}
-          onPress={()=> dispatch(likeFlight(item))}
-          />         
-      </TouchableOpacity>
-    </View>
+          onPress={() => dispatch(likeFlight(item))}
+        />
+      </View>
+    </TouchableOpacity>
   );
 }
 
@@ -65,19 +65,19 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: 20
   },
-  contentTitle: { 
+  contentTitle: {
     flexDirection: 'row',
     alignItems: 'center'
   },
-  bigText:{
+  bigText: {
     fontSize: 17
   },
   mediumText: {
     fontSize: 13,
     color: '#878787'
   },
-  smallText:{
-    fontSize: 11, 
+  smallText: {
+    fontSize: 11,
     color: '#878787',
     lineHeight: 16,
     marginRight: 10
