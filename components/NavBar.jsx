@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
-import { NavBarLine } from './NavBarLine';
+import { GradientLine } from './GradientLine';
 import { useSelector, useDispatch } from 'react-redux';
 import { filterFlights } from '../redux/actions';
 
@@ -21,7 +21,7 @@ export const NavBar = () => {
           >
             Favoirites
             </Text>
-          {filterByLike && <NavBarLine />}
+          {filterByLike && <GradientLine myStyles={styles.gradientLine}/>}
         </View>
         <View style={styles.link}>
           <Text
@@ -30,7 +30,7 @@ export const NavBar = () => {
           >
             Browse
             </Text>
-          {!filterByLike && <NavBarLine />}
+          {!filterByLike && <GradientLine myStyles={styles.gradientLine}/>}
         </View>
       </View>
     </View>
@@ -55,6 +55,14 @@ const styles = StyleSheet.create({
   title: {
     paddingTop: 26,
     textAlign: 'center'
+  },
+  gradientLine: {
+    position: 'absolute',
+    bottom: -10,
+    shadowOpacity: 0.15,
+    width: '100%',
+    height: 3,
+    borderRadius: 2,
   },
   navLinks: {
     flexDirection: 'row',
