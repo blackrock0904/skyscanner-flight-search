@@ -22,8 +22,8 @@ export const Carousel = () => {
     inactiveSlideOpacity={1}
     inactiveSlideScale={1}
     firstItem={1}
-    sliderWidth={width - 60}
-    itemWidth={(width - 60) / 2}
+    sliderWidth={width - 50}
+    itemWidth={(width - 50) / 2}
     data={images}
     renderItem={renderItem}
   />

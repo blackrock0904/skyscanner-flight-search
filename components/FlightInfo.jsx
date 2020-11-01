@@ -38,8 +38,7 @@ export const FlightInfo = () => {
               isLiked={currentFlight.isLiked}
               onPress={()=> dispatch(likeFlight(currentFlight))}
             />    
-            </View>
-            
+            </View> 
           </View>
           <GradientLine myStyles={styles.gradientLine}>
             <View style={styles.flexCenter}>
@@ -53,8 +52,8 @@ export const FlightInfo = () => {
             </View>
           </GradientLine>
           <Carousel />
+          <Button title='back' onPress={() => { dispatch(showInfo(currentFlight)) }} />
         </View>
-        <Button title='back' onPress={() => { dispatch(showInfo(currentFlight)) }} />
       </ImageBackground>
     </View>
   )
@@ -83,11 +82,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 40,
     padding: 25,
+    justifyContent: 'flex-end'
   },
   gradientLine: {
     flexDirection: 'row',
     flexGrow: 1,
-    height: 50,
+    minHeight: 50,
     width: '100%',
     borderRadius: 10,
     marginVertical: 20,
@@ -137,5 +137,5 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: -5,
     top: -5
-  }
+  },
 })
