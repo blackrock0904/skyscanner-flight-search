@@ -4,7 +4,7 @@ import { SvgAirPlane } from './SvgAirPlane';
 import { SvgArrow } from './SvgArrow';
 import { SvgHeart } from './SvgHeart';
 import { useDispatch } from 'react-redux';
-import { likeFlight } from '../redux/actions';
+import { likeFlight, showInfo } from '../redux/actions';
 
 export const FlightCard = ({ item }) => {
   
@@ -13,7 +13,7 @@ export const FlightCard = ({ item }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <SvgAirPlane />
+        <SvgAirPlane onPress={()=> dispatch(showInfo(item))}/>
         <View style={styles.content}>
           <View style={styles.contentTitle}>
             <Text style={styles.bigtext}>{item.from}</Text>

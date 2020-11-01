@@ -1,9 +1,10 @@
+
 export const db = {
   filterByLike: false,
   currentFlight: {},
   showFlightInfo: false,
-  flights: [
-    {
+  flights: [{
+      id: '1',
       from: 'Moscow',
       to: 'New York',
       airport: 'VKO',
@@ -14,6 +15,7 @@ export const db = {
       isLiked: false
     },
     {
+      id: '2',
       from: 'Moscow',
       to: 'New York',
       airport: 'VKO',
@@ -24,6 +26,7 @@ export const db = {
       isLiked: true
     },
     {
+      id: '3',
       from: 'Moscow',
       to: 'New York',
       airport: 'VKO',
@@ -34,6 +37,7 @@ export const db = {
       isLiked: true
     },
     {
+      id: '4',
       from: 'Moscow',
       to: 'New York',
       airport: 'VKO',
@@ -44,6 +48,7 @@ export const db = {
       isLiked: false
     },
     {
+      id: '5',
       from: 'Moscow',
       to: 'New York',
       airport: 'VKO',
@@ -54,6 +59,7 @@ export const db = {
       isLiked: true
     },
     {
+      id: '6',
       from: 'Moscow',
       to: 'New York',
       airport: 'VKO',
@@ -63,5 +69,5 @@ export const db = {
       price: 23934,
       isLiked: false
     },
-  ]  
+  ]
 }
