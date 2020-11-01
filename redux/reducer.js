@@ -1,4 +1,4 @@
-import { LIKE } from './actionTypes'
+import { LIKE, CHANGE_MODE } from './actionTypes'
 export const reducer = (state, action) => {
   switch(action.type) {
     case LIKE:
@@ -11,6 +11,11 @@ export const reducer = (state, action) => {
             isLiked: !item.isLiked
           }
         })
+      }
+    case CHANGE_MODE:
+      return {
+        ...state,
+        isBrowse: !state.isBrowse
       }
     default:
       return state;

@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text } from 'react-native';
 import { NavBarLine } from './NavBarLine';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeMode } from '../redux/actions';
 
 export const NavBar = () => {
+  const dispatch = useDispatch();
+  const isBrowse = useSelector(state => state.isBrowse);
 
-  const isBrowse = useSelector( state => state.isBrowse);
   return (
     <View style={styles.container}>
       <View>
@@ -13,15 +15,21 @@ export const NavBar = () => {
       </View>
       <View style={styles.navLinks}>
         <View style={styles.link}>
-          <TouchableOpacity >
-            <Text style={styles.linkText}>Favoirites</Text>
-          </TouchableOpacity>
+          <Text
+            style={styles.linkText}
+            onPress={() => dispatch(changeMode())}
+          >
+            Favoirites
+            </Text>
           {!isBrowse && <NavBarLine />}
         </View>
         <View style={styles.link}>
-          <TouchableOpacity>
-            <Text style={styles.linkText}>Browse</Text>    
-          </TouchableOpacity>
+          <Text
+            style={styles.linkText}
+            onPress={() => dispatch(changeMode())}
+          >
+            Browse
+            </Text>
           {isBrowse && <NavBarLine />}
         </View>
       </View>
@@ -50,9 +58,9 @@ const styles = StyleSheet.create({
   },
   navLinks: {
     flexDirection: 'row',
-    justifyContent: 'space-around', 
+    justifyContent: 'space-around',
     marginHorizontal: 20,
-    
+
   },
   link: {
     flexBasis: '50%',
