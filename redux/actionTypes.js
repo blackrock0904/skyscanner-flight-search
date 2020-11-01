@@ -1,2 +1,2 @@
-export const LIKE = 'LIKE';
-export const CHANGE_MODE = 'CHANGE_MODE';
+export const LIKE_FLIGHT = 'LIKE_FLIGHT';
+export const FILTER_FLIGHTS = 'FILTER_FLIGHTS';

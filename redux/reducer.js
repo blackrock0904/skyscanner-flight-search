@@ -1,7 +1,7 @@
-import { LIKE, CHANGE_MODE } from './actionTypes'
+import { LIKE_FLIGHT, FILTER_FLIGHTS } from './actionTypes'
 export const reducer = (state, action) => {
   switch(action.type) {
-    case LIKE:
+    case LIKE_FLIGHT:
       return {
         ...state,
         flights: state.flights.map(item => {
@@ -12,10 +12,10 @@ export const reducer = (state, action) => {
           }
         })
       }
-    case CHANGE_MODE:
+    case FILTER_FLIGHTS:
       return {
         ...state,
-        isBrowse: !state.isBrowse
+        filterByLike: !state.filterByLike
       }
     default:
       return state;

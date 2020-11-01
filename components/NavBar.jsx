@@ -2,11 +2,11 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { NavBarLine } from './NavBarLine';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeMode } from '../redux/actions';
+import { filterFlights } from '../redux/actions';
 
 export const NavBar = () => {
   const dispatch = useDispatch();
-  const isBrowse = useSelector(state => state.isBrowse);
+  const filterByLike = useSelector(state => state.filterByLike);
 
   return (
     <View style={styles.container}>
@@ -17,20 +17,20 @@ export const NavBar = () => {
         <View style={styles.link}>
           <Text
             style={styles.linkText}
-            onPress={() => dispatch(changeMode())}
+            onPress={() => dispatch(filterFlights())}
           >
             Favoirites
             </Text>
-          {!isBrowse && <NavBarLine />}
+          {filterByLike && <NavBarLine />}
         </View>
         <View style={styles.link}>
           <Text
             style={styles.linkText}
-            onPress={() => dispatch(changeMode())}
+            onPress={() => dispatch(filterFlights())}
           >
             Browse
             </Text>
-          {isBrowse && <NavBarLine />}
+          {!filterByLike && <NavBarLine />}
         </View>
       </View>
     </View>

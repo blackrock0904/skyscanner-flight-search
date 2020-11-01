@@ -1,10 +1,11 @@
-import { LIKE, CHANGE_MODE } from './actionTypes';
+import { LIKE_FLIGHT, FILTER_FLIGHTS } from './actionTypes';
+
 export const likeFlight = flightCard => ({
-  type: LIKE,
+  type: LIKE_FLIGHT,
   payload: flightCard
 })
 
-export const changeMode = () => ({
-  type: CHANGE_MODE,
+export const filterFlights = () => ({
+  type: FILTER_FLIGHTS,
   payload: null
 })

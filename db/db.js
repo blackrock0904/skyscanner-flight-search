@@ -1,5 +1,7 @@
 export const db = {
-  isBrowse: true,
+  filterByLike: false,
+  currentFlight: {},
+  showFlightInfo: false,
   flights: [
     {
       from: 'Moscow',
