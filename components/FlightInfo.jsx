@@ -42,7 +42,7 @@ export const FlightInfo = () => {
           </View>
           <TouchableOpacity
             onPress={() => { dispatch(showInfo(currentFlight)) }}
-            activeOpacity={1}
+            // activeOpacity={1}
           >
             <GradientLine myStyles={styles.gradientLine}>
               <View style={styles.flexCenter}>
