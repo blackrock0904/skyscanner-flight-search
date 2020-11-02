@@ -16,11 +16,9 @@ export const FlightInfo = () => {
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.image} source={require('../assets/flightInfo.png')}>
-      <TouchableOpacity 
-        onPress={() => { dispatch(showInfo(currentFlight)) }}
-        activeOpacity={1}
-        >
-      <View style={styles.flightCard}>
+
+
+        <View style={styles.flightCard}>
           <View style={styles.header}>
             <View >
               <Text style={styles.headerSmallFont}>{currentFlight.departureDate}</Text>
@@ -28,38 +26,42 @@ export const FlightInfo = () => {
               <Text style={styles.headerSmallFont}>{currentFlight.departureCity}</Text>
             </View>
             <View >
-              <SvgMore style={styles.headerMore}/>
+              <SvgMore style={styles.headerMore} />
             </View>
             <View >
               <Text style={styles.headerSmallFont}>{currentFlight.arriveTime}</Text>
               <Text style={styles.headerBigFont}>{currentFlight.arrivePort}</Text>
               <Text style={styles.headerSmallFont}>{currentFlight.arriveCity}</Text>
-            </View>     
+            </View>
             <View style={styles.heartContainer}>
-            <SvgHeart 
-              isLiked={currentFlight.isLiked}
-              onPress={()=> dispatch(likeFlight(currentFlight))}
-            />    
-            </View> 
+              <SvgHeart
+                isLiked={currentFlight.isLiked}
+                onPress={() => dispatch(likeFlight(currentFlight))}
+              />
+            </View>
           </View>
-          <GradientLine myStyles={styles.gradientLine}>
-            <View style={styles.flexCenter}>
-              <Text style={styles.smallFont}>Price</Text>
-              <Text style={styles.bigFont}>{currentFlight.price} ₽</Text>
-            </View>
-            <View style={styles.verticalLine}></View>
-            <View style={styles.flexCenter}>
-              <Text style={styles.smallFont}>Boarding</Text>
-              <Text style={styles.bigFont}>{currentFlight.departureTime}</Text>
-            </View>
-          </GradientLine>
+          <TouchableOpacity
+            onPress={() => { dispatch(showInfo(currentFlight)) }}
+            activeOpacity={1}
+          >
+            <GradientLine myStyles={styles.gradientLine}>
+              <View style={styles.flexCenter}>
+                <Text style={styles.smallFont}>Price</Text>
+                <Text style={styles.bigFont}>{currentFlight.price} ₽</Text>
+              </View>
+              <View style={styles.verticalLine}></View>
+              <View style={styles.flexCenter}>
+                <Text style={styles.smallFont}>Boarding</Text>
+                <Text style={styles.bigFont}>{currentFlight.departureTime}</Text>
+              </View>
+            </GradientLine>
+          </TouchableOpacity>
           <Carousel />
           {/* <Button title='back'  /> */}
         </View>
-      </TouchableOpacity>
-        
+
       </ImageBackground>
-    </View>
+    </View >
   )
 }
 
