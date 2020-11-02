@@ -13,12 +13,12 @@
 Инициализация приложения через expo init.
 <div>
 <span>
-  <img src="./assets/sky1.png" width="250" alt="1 page">
+  <img src="./assets/sky1.png" width="240" alt="1 page">
 </span>
 <span>
-  <img src="./assets/sky2.png" width="250" alt="2 page">  
+  <img src="./assets/sky2.png" width="240" alt="2 page">  
 </span>
 <span>
-  <img src="./assets/sky3.png" width="250" alt="1 page">
+  <img src="./assets/sky3.png" width="240" alt="3 page">
 </span>
 </div>
