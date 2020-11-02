@@ -19,17 +19,17 @@ export const FlightInfo = () => {
         <View style={styles.flightCard}>
           <View style={styles.header}>
             <View >
-              <Text style={styles.headerSmallFont}>{currentFlight.date}</Text>
-              <Text style={styles.headerBigFont}>{currentFlight.airport}</Text>
-              <Text style={styles.headerSmallFont}>{currentFlight.from}</Text>
+              <Text style={styles.headerSmallFont}>{currentFlight.departureDate}</Text>
+              <Text style={styles.headerBigFont}>{currentFlight.departurePort}</Text>
+              <Text style={styles.headerSmallFont}>{currentFlight.departureCity}</Text>
             </View>
             <View >
               <SvgMore style={styles.headerMore}/>
             </View>
             <View >
-              <Text style={styles.headerSmallFont}>{currentFlight.time}</Text>
-              <Text style={styles.headerBigFont}>{currentFlight.airport}</Text>
-              <Text style={styles.headerSmallFont}>{currentFlight.date}</Text>
+              <Text style={styles.headerSmallFont}>{currentFlight.arriveTime}</Text>
+              <Text style={styles.headerBigFont}>{currentFlight.arrivePort}</Text>
+              <Text style={styles.headerSmallFont}>{currentFlight.arriveCity}</Text>
             </View>     
             <View style={styles.heartContainer}>
             <SvgHeart 
@@ -46,7 +46,7 @@ export const FlightInfo = () => {
             <View style={styles.verticalLine}></View>
             <View style={styles.flexCenter}>
               <Text style={styles.smallFont}>Boarding</Text>
-              <Text style={styles.bigFont}>{currentFlight.time}</Text>
+              <Text style={styles.bigFont}>{currentFlight.departureTime}</Text>
             </View>
           </GradientLine>
           <Carousel />

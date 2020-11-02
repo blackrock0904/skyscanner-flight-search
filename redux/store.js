@@ -1,5 +1,10 @@
 import { createStore } from 'redux';
 import { reducer } from './reducer';
-import { db } from '../db/db';
 
-export const store = createStore(reducer, db);
+const initialState = {
+  filterByLike: false,
+  currentFlight: {},
+  showFlightInfo: false,
+  flights: []
+}
+export const store = createStore(reducer, initialState);

@@ -1,4 +1,4 @@
-import { LIKE_FLIGHT, FILTER_FLIGHTS, SHOW_INFO } from './actionTypes';
+import { LIKE_FLIGHT, FILTER_FLIGHTS, SHOW_INFO, LOAD_TO_STATE } from './actionTypes';
 
 export const likeFlight = flightCard => ({
   type: LIKE_FLIGHT,
@@ -13,4 +13,9 @@ export const filterFlights = () => ({
 export const showInfo = (item) => ({
   type: SHOW_INFO,
   payload: item
+})
+
+export const loadToState = (data) => ({
+  type: LOAD_TO_STATE,
+  payload: data
 })

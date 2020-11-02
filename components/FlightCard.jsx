@@ -9,6 +9,7 @@ import { SvgHeart } from './SvgHeart';
 export const FlightCard = ({ flight }) => {
   const dispatch = useDispatch();
   const item = flight.item;
+  
   return (
     <TouchableOpacity onPress={()=> dispatch(showInfo(item))}>
       <View style={styles.container}>
@@ -16,11 +17,11 @@ export const FlightCard = ({ flight }) => {
           <SvgAirPlane />
           <View style={styles.content}>
             <View style={styles.contentTitle}>
-              <Text style={styles.bigtext}>{item.from}</Text>
+              <Text style={styles.bigtext}>{item.departureCity}</Text>
               <SvgArrow />
-              <Text style={styles.bigtext}>{item.to}</Text>
+              <Text style={styles.bigtext}>{item.arriveCity}</Text>
             </View>
-            <Text style={styles.mediumText}>{item.airport}  —  {item.date}  —  {item.time}</Text>
+            <Text style={styles.mediumText}>{item.departurePort}  —  {item.departureDate}  —  {item.departureTime}</Text>
             <Text style={styles.mediumText}>{item.company}</Text>
           </View>
         </View>

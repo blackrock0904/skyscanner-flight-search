@@ -12,6 +12,7 @@ export const FlightCardList = () => {
       data={flights}
       renderItem={(item) => <FlightCard flight={item} />}
       keyExtractor={(item) => item.id}
+      style={styles.container}
     />
   );
 }
