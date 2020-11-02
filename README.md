@@ -11,6 +11,7 @@
   - SkyScanner API
 
 Инициализация приложения через expo-create-app.
+
 Запуск: 
   - npm i
   - npm start
