@@ -1,6 +1,4 @@
 # skyscanner-flight-search
-
-Тестовое задание.
 Поиск билетов с текущей даты + 10 дней.
 Города, аэропорты вылета/прилета захардкорены.
 
@@ -8,9 +6,7 @@
   - React Native
   - Redux
   - Saga
-  - SkyScanner API
 
-Инициализация приложения через expo init.
 <div>
 <span>
   <img src="./assets/sky1.png" width="240" alt="1 page">
