@@ -15,6 +15,6 @@
   npm i
   npm start
   
-  <img src="./assets/fly1.png" width="250" alt="1 page">
-  <img src="./assets/fly2.png" width="250" alt="2 page">
-  <img src="./assets/fly3.png" width="250" alt="1 page">
+  <img src="./assets/sky1.png" width="250" alt="1 page">
+  <img src="./assets/sk2.png" width="250" alt="2 page">
+  <img src="./assets/sky3.png" width="250" alt="1 page">
