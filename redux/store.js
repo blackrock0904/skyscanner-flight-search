@@ -1,5 +1,9 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { reducer } from './reducer';
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from './saga/sagas';
+
+const sagaMiddleware = createSagaMiddleware();
 
 const initialState = {
   filterByLike: false,
@@ -7,4 +11,5 @@ const initialState = {
   showFlightInfo: false,
   flights: []
 }
-export const store = createStore(reducer, initialState);
+export const store = createStore(reducer, initialState, applyMiddleware(sagaMiddleware));
+sagaMiddleware.run(rootSaga);
