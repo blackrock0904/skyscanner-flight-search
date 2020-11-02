@@ -11,6 +11,7 @@
   - SkyScanner API
 
 Инициализация приложения через expo init.
+<div>
 <span>
   <img src="./assets/sky1.png" width="250" alt="1 page">
 </span>
@@ -20,3 +21,4 @@
 <span>
   <img src="./assets/sky3.png" width="250" alt="1 page">
 </span>
+</div>
