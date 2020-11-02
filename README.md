@@ -12,10 +12,6 @@
 
 Инициализация приложения через expo init.
 
-Запуск: 
-  - npm i
-  - npm start
-  
   <img src="./assets/sky1.png" width="250" alt="1 page">
   <img src="./assets/sky2.png" width="250" alt="2 page">
   <img src="./assets/sky3.png" width="250" alt="1 page">
