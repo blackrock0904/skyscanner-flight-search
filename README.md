@@ -7,7 +7,7 @@
 Используемые технологии:
   - React Native
   - Redux
-  - Redux-Saga
+  - Saga
   - SkyScanner API
 
 Инициализация приложения через expo init.
