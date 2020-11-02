@@ -10,7 +10,7 @@
   - Redux-Saga
   - SkyScanner API
 
-Инициализация приложения через expo-create-app.
+Инициализация приложения через expo init.
 
 Запуск: 
   - npm i
