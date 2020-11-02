@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, ImageBackground, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground, Dimensions, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { showInfo } from '../redux/actions';
 import { likeFlight } from '../redux/actions';
@@ -16,7 +16,11 @@ export const FlightInfo = () => {
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.image} source={require('../assets/flightInfo.png')}>
-        <View style={styles.flightCard}>
+      <TouchableOpacity 
+        onPress={() => { dispatch(showInfo(currentFlight)) }}
+        activeOpacity={1}
+        >
+      <View style={styles.flightCard}>
           <View style={styles.header}>
             <View >
               <Text style={styles.headerSmallFont}>{currentFlight.departureDate}</Text>
@@ -50,8 +54,10 @@ export const FlightInfo = () => {
             </View>
           </GradientLine>
           <Carousel />
-          <Button title='back' onPress={() => { dispatch(showInfo(currentFlight)) }} />
+          {/* <Button title='back'  /> */}
         </View>
+      </TouchableOpacity>
+        
       </ImageBackground>
     </View>
   )
