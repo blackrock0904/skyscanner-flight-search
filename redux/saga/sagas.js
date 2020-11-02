@@ -6,7 +6,6 @@ let date = new Date();
 let since = date.toISOString().slice(0, 10);
 date = new Date(date.getTime() + 1000 * 60 * 60 * 24 * 10)
 let till = date.toISOString().slice(0, 10);
-
 const fetchSkyScanner = async () => {
   const resp = await fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/RUB/en-US/SFO-sky/ORD-sky/${since}?inboundpartialdate=${till}`, {
     "method": "GET",
