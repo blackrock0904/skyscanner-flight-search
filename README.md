@@ -5,7 +5,7 @@
 Города, аэропорты вылета/прилета захардкорены.
 
 Используемые технологии:
-  - React Naative
+  - React Native
   - Redux
   - Redux-Saga
   - SkyScanner API
